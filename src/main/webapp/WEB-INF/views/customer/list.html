@@ -54,9 +54,11 @@
                             </button>
                         </td>
                         <td>
-                            <button class="btn btn-outline-success">
-                                <i class="fas fa-plus"></i>
-                            </button>
+                            <a th:href="@{'/customers/deposit/' + ${__item.id__}}">
+                                <button class="btn btn-outline-success">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </a>
                         </td>
                         <td>
                             <button class="btn btn-outline-warning">
@@ -64,55 +66,45 @@
                             </button>
                         </td>
                         <td>
-                            <button class="btn btn-outline-primary">
-                                <i class="fas fa-exchange-alt"></i>
-                            </button>
+                            <a th:href="@{'/customers/transfer/' + ${__item.id__}}">
+                                <button class="btn btn-outline-primary">
+                                    <i class="fas fa-exchange-alt"></i>
+                                </button>
+                            </a>
+
                         </td>
                         <td>
-                            <button class="btn btn-outline-danger">
-                                <i class="fas fa-ban"></i>
-                            </button>
+                            <a th:href="@{'/customers/delete/' + ${__item.id__}}">
+                                <button class="btn btn-outline-danger">
+                                    <i class="fas fa-ban"></i>
+                                </button>
+                            </a>
                         </td>
                     </tr>
                 </th:block>
-
-<!--                    <tr>-->
-<!--                        <td>2</td>-->
-<!--                        <td>Mark 2</td>-->
-<!--                        <td>Otto2@co.cc</td>-->
-<!--                        <td>3456</td>-->
-<!--                        <td>39 Nguyễn Tri Phương</td>-->
-<!--                        <td>10.000</td>-->
-<!--                        <td>-->
-<!--                            <button class="btn btn-outline-secondary">-->
-<!--                                <i class="far fa-edit"></i>-->
-<!--                            </button>-->
-<!--                        </td>-->
-<!--                        <td>-->
-<!--                            <button class="btn btn-outline-success">-->
-<!--                                <i class="fas fa-plus"></i>-->
-<!--                            </button>-->
-<!--                        </td>-->
-<!--                        <td>-->
-<!--                            <button class="btn btn-outline-warning">-->
-<!--                                <i class="fas fa-minus"></i>-->
-<!--                            </button>-->
-<!--                        </td>-->
-<!--                        <td>-->
-<!--                            <button class="btn btn-outline-primary">-->
-<!--                                <i class="fas fa-exchange-alt"></i>-->
-<!--                            </button>-->
-<!--                        </td>-->
-<!--                        <td>-->
-<!--                            <button class="btn btn-outline-danger">-->
-<!--                                <i class="fas fa-ban"></i>-->
-<!--                            </button>-->
-<!--                        </td>-->
-<!--                    </tr>-->
                 </tbody>
             </table>
         </div>
     </div>
 
+    <th:block th:if="${success == true}">
+        <footer class="container-fluid success">
+            <div class="container">
+                <div class="notification">
+                    <p class="success" th:text="${message}"></p>
+                </div>
+            </div>
+        </footer>
+    </th:block>
+
+    <th:block th:if="${success == false}">
+        <footer class="container-fluid error">
+            <div class="container">
+                <div class="notification">
+                    <p class="error" th:text="${message}"></p>
+                </div>
+            </div>
+        </footer>
+    </th:block>
 </body>
 </html>

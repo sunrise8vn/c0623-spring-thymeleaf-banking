@@ -6,11 +6,11 @@ public interface IGeneralService<E, T> {
 
     List<E> findAll();
 
-    E findById(T t);
+    E findById(T id);
 
     void create(E e);
 
-    void update(T t, E e);
+    void update(T id, E e);
 
-    void removeById(T t);
+    void removeById(T id);
 }
