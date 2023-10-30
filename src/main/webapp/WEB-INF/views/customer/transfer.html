@@ -45,7 +45,7 @@
                 <div class="row mb-3">
                     <div class="col-lg-3">
                         <label class="form-label fw-bold">Recipient</label>
-                        <select class="form-select">
+                        <select class="form-select" name="recipient.id">
                             <option th:each="item : ${recipients}" th:value="${item.id}" th:text="${'(' + item.id + ') ' + item.fullName}"></option>
                         </select>
                     </div>

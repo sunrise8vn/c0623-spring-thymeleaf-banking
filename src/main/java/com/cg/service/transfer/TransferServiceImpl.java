@@ -3,6 +3,7 @@ package com.cg.service.transfer;
 import com.cg.model.Transfer;
 
 import java.util.List;
+import java.util.Optional;
 
 public class TransferServiceImpl implements ITransferService{
     @Override
@@ -11,22 +12,22 @@ public class TransferServiceImpl implements ITransferService{
     }
 
     @Override
-    public Transfer findById(Long id) {
+    public Optional<Transfer> findById(Long id) {
         return null;
     }
 
     @Override
-    public void create(Transfer transfer) {
+    public void save(Transfer transfer) {
 
     }
 
     @Override
-    public void update(Long id, Transfer transfer) {
+    public void update(Transfer transfer) {
 
     }
 
     @Override
-    public void removeById(Long id) {
+    public void deleteById(Long id) {
 
     }
 }

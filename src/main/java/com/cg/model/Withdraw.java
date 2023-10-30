@@ -1,12 +1,12 @@
 package com.cg.model;
 
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 
-
 @Entity
-@Table(name = "deposits")
-public class Deposit {
+@Table(name = "withdraws")
+public class Withdraw {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,15 +16,16 @@ public class Deposit {
     @JoinColumn(name = "customer_id", referencedColumnName = "id", nullable = false)
     private Customer customer;
 
-    @Column(name = "transaction_amount", columnDefinition = "decimal(10,0)", nullable = false)
+
+    @Column(name = "transaction_amount", precision = 10, scale = 0, nullable = false)
     private BigDecimal transactionAmount;
 
-    private Boolean deleted;
+    private Boolean deleted = false;
 
-    public Deposit() {
+    public Withdraw() {
     }
 
-    public Deposit(Long id, Customer customer, BigDecimal transactionAmount, Boolean deleted) {
+    public Withdraw(Long id, Customer customer, BigDecimal transactionAmount, Boolean deleted) {
         this.id = id;
         this.customer = customer;
         this.transactionAmount = transactionAmount;
